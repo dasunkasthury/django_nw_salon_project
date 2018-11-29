@@ -1,0 +1,32 @@
+{% extends 'stylist/base.html' %}
+
+{% block title %} Stylist {% endblock %}
+
+{% block body %}
+
+    <h1> hear is the details of the Freelancers </h1>
+
+    {% if All_Freelancer %}
+
+        <ul>
+            {% for style in All_Freelancer %}
+                <div class="col-lg-4 col-sm-6 text-center mb-4">
+                    <img class="rounded-circle img-fluid d-block mx-auto" src="{{style.image.url}}" alt="Stylist face" height="200" width="200">
+                        <h3>
+                            <a href="{% url 'stylist:detail' style.id %}">{{style.freelancer_name}}.</a>
+                        </h3>
+                        <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+                </div>
+
+
+            {% endfor %}
+
+        </ul>
+
+
+    {% else %}
+        <h3>you don't have any movies</h3>
+
+    {% endif %}
+
+{% endblock %}

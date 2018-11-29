@@ -1,0 +1,25 @@
+{% extends "stylist/base.html" %}
+{% block title %} Stylist details {% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+
+    <form class="form-horizontal" action="" method="post" enctype="multipart/form-data" >
+        {% csrf_token %}
+        {% include 'stylist/form-template.html'%}
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-success"> Submit</button>
+            </div>
+        </div>
+
+    </form>
+
+
+</div>
+
+
+
+
+
+{% endblock %}

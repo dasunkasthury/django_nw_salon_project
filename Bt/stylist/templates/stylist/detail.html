@@ -1,0 +1,19 @@
+{% extends "stylist/base.html" %}
+{% block title %} Stylist details {% endblock %}
+
+{% block body %}
+
+    <h1> hear is the details of the {{ freelancer.freelancer_name }} freelancer </h1>
+
+    <img src="{{ freelancer.image.url}}" alt="Stylist face" height="420" width="420">
+
+    <h2>{{ freelancer.age }}</h2>
+
+    <div class="col-lg-4">
+          <h1>Business Name or Tagline</h1>
+          <p>This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!</p>
+          <a class="btn btn-primary btn-lg" href="{% url 'stylist:freelancer_delete' freelancer.id %}">delete</a>
+            <a class="btn btn-primary btn-lg" href="{% url 'stylist:freelancer_update' freelancer.id %}">modify</a>
+    </div>
+
+{% endblock %}
